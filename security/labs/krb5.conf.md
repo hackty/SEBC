@@ -1,3 +1,4 @@
+```
 [libdefaults]
 default_realm = HACKTY.COM
 dns_lookup_kdc = false
@@ -15,3 +16,4 @@ HACKTY.COM = {
 kdc = ip-172-31-27-83.ec2.internal
 admin_server = ip-172-31-27-83.ec2.internal
 }
+```
