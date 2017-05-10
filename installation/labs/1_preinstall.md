@@ -5,6 +5,7 @@ Set the value to 1 if necessary
 [root@ip-172-31-27-83 ~]# cat /proc/sys/vm/swappiness
 60
 [root@ip-172-31-27-83 ~]# echo 1 > /proc/sys/vm/swappiness
+[root@ip-172-31-27-83 ~]# echo 'vm.swappiness=1'>> /etc/sysctl.conf
 [root@ip-172-31-27-83 ~]# cat /proc/sys/vm/swappiness
 1
 ```  
