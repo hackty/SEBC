@@ -34,3 +34,35 @@ extras                                                                       Cen
 updates                                                                      CentOS-6 - Updates                                                                        270
 repolist: 7,040
 ```
+
+## Add the following Linux accounts to all nodes
+User zhou with a UID of 2800  
+User chen with a UID of 2900  
+Create the group shanghai and add chen to it  
+Create the group beijing and add zhou to it  
+```
+[root@ip-172-31-29-207 ~]# useradd -u 2800 zhou
+[root@ip-172-31-29-207 ~]# useradd -u 2900 chen
+[root@ip-172-31-29-207 ~]# groupadd shanghai
+[root@ip-172-31-29-207 ~]# usermod -a -G shanghai chen
+[root@ip-172-31-29-207 ~]# groupadd beijing 
+[root@ip-172-31-29-207 ~]# usermod -a -G beijing zhou 
+```
+
+## List the /etc/passwd entries for zhou and chen
+Not the entire file!
+```
+[root@ip-172-31-29-207 ~]# cat /etc/passwd | grep zhou
+zhou:x:2800:2800::/home/zhou:/bin/bash
+[root@ip-172-31-29-207 ~]# cat /etc/passwd | grep chen
+chen:x:2900:2900::/home/chen:/bin/bash
+```
+
+## List the /etc/group entries for shanghai and beijing
+Not the entire file!
+```
+[root@ip-172-31-29-207 ~]# cat /etc/group | grep shanghai
+shanghai:x:2901:chen
+[root@ip-172-31-29-207 ~]# cat /etc/group | grep beijing
+beijing:x:2902:zhou
+```
